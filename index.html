@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>دعوة للانضمام إلى جمعية · لمّة</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <p class="brand">لمّة</p>
+
+      <section id="loading" class="state" aria-busy="true">
+        <p>جارٍ التحقق من الدعوة…</p>
+      </section>
+
+      <section id="invite" class="state" hidden>
+        <p class="lead">تمت دعوتك للانضمام إلى</p>
+        <p class="pool" id="pool-name"></p>
+
+        <p class="label">رمز الدعوة</p>
+        <p class="code" id="invite-code"></p>
+
+        <a class="button" id="open-app" href="#">افتح التطبيق</a>
+
+        <p class="hint">
+          ليس لديك التطبيق؟ افتح لمّة، اختر «الانضمام إلى جمعية»، ثم أدخل الرمز أعلاه.
+        </p>
+      </section>
+
+      <section id="problem" class="state" hidden>
+        <p id="problem-text"></p>
+      </section>
+    </main>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

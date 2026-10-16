@@ -1,0 +1,103 @@
+:root {
+  --bg: #fff9f7;
+  --surface: #ffffff;
+  --border: #eadce1;
+  --text: #2a2126;
+  --muted: #7c6b72;
+  --primary: #a73a6b;
+  --primary-soft: #f6e3ea;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Cairo', 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.7;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.brand {
+  margin: 0 0 24px;
+  color: var(--primary);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.pool {
+  margin: 4px 0 24px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.code {
+  margin: 4px 0 24px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+.button {
+  display: block;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:active {
+  background: #8c2f59;
+}
+
+.hint {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.state[hidden] {
+  display: none;
+}
+
+#problem-text {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
