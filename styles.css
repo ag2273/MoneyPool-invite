@@ -80,10 +80,28 @@ body {
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
+  border: 1px solid transparent;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .button:active {
   background: #8c2f59;
+}
+
+.button.secondary {
+  margin-top: 12px;
+  background: var(--surface);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.button.secondary:active {
+  background: var(--primary-soft);
+}
+
+.code {
+  user-select: all;
 }
 
 .hint {

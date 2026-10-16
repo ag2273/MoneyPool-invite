@@ -15,6 +15,9 @@
   var poolName = document.getElementById('pool-name');
   var inviteCode = document.getElementById('invite-code');
   var openApp = document.getElementById('open-app');
+  var copyCode = document.getElementById('copy-code');
+  var copyDone = document.getElementById('copy-done');
+  var appFallback = document.getElementById('app-fallback');
 
   // textContent only: the pool name is organizer-supplied data.
   function showProblem(message) {
@@ -35,6 +38,23 @@
     problem.hidden = true;
     invite.hidden = false;
   }
+
+  // A custom scheme only resolves once an app registers it, so a tap can
+  // silently do nothing (Expo Go, no app installed). Offer the code instead.
+  openApp.addEventListener('click', function () {
+    window.setTimeout(function () {
+      if (document.visibilityState === 'visible') appFallback.hidden = false;
+    }, 1200);
+  });
+
+  copyCode.addEventListener('click', async function () {
+    try {
+      await navigator.clipboard.writeText(code);
+      copyDone.hidden = false;
+    } catch {
+      window.getSelection().selectAllChildren(inviteCode);
+    }
+  });
 
   async function load() {
     if (!code || !config.supabaseUrl || !config.anonKey) {
